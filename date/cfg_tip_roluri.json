@@ -1,0 +1,7 @@
+[
+    {"cod": 1, "descriere": "PERSOANĂ FIZICĂ LOCALNICĂ"},
+    {"cod": 2, "descriere": "PERSOANĂ FIZICĂ STRĂINAȘ"},
+    {"cod": 3, "descriere": "PERSOANĂ JURIDICĂ LOCALNICĂ"},
+    {"cod": 4, "descriere": "PERSOANĂ JURIDICĂ STRĂINAȘ"},
+    {"cod": 5, "descriere": "EROARE"}
+]
