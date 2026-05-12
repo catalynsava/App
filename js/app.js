@@ -20,6 +20,7 @@ async function loadCapitole(capitol)
         document.getElementById("right_content").innerHTML = html;
         await get_cfg_tip_roluri();
         await get_cfg_localitati();
+        await get_cfg_exploatatii();
     }
     if (capitol == 2) {
         const response = await fetch("pages/capitol1.html");
@@ -129,8 +130,26 @@ async function get_cfg_localitati() {
         console.log(date);
     } catch (error) {
         console.error("A apărut o problemă la descărcare:", error);
+    } 
+}
+async function get_cfg_exploatatii() {
+    try {
+        let html = "";
+        const raspuns = await fetch("date/cfg_exploatatii.json");
+        if (!raspuns.ok) {
+            throw new Error(`Eroare HTTP! Status: ${raspuns.status}`);
+        }
+        const date = await raspuns.json();
+        date.forEach( (item) => {
+            html += `
+                <option value="${item.cod}">${item.descriere}</option>
+            `;
+        });
+        document.getElementById("selectTipExploatatie").innerHTML = html;
+        console.log(date);
+    } catch (error) {
+        console.error("A apărut o problemă la descărcare:", error);
     }
-    
 }
 
 async function initializare() {
