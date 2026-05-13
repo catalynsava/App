@@ -1,40 +1,63 @@
 
 <form>
     <div class="row">
+        <small class="form-text text-muted d-block text-end" id="id_small">
+            00000000-0000-0000-0000-000000000000
+        </small>
         <div class="col">
-            <select class="form-select" aria-label="tip pozitie" id="selectTipPozitie">
-            </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text">tip pozitie</span>
+                <select class="form-select" aria-label="tip pozitie" id="selectTipPozitie">
+                </select>
+            </div>
+            
         </div>
         <div class="col">
-            <select class="form-select" aria-label="localitate" id="selectCfgLocalitate">
-            </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text">localitate</span>
+                <select class="form-select" aria-label="localitate" id="selectCfgLocalitate">
+                </select>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <select class="form-select" aria-label="tip exploatatie" id="selectTipExploatatie">
-            </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text">exploatație</span>
+                <select class="form-select" aria-label="tip exploatatie" id="selectTipExploatatie">
+                </select>
+            </div> 
         </div>
         <div class="col">
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="volum" id="volum_input">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">volum</span>
+                        <input type="text" class="form-control fw-medium" placeholder="volum" id="volum_input">
+                    </div>
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="poziție" id="pozitie_input">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">poziție</span>
+                        <input type="text" class="form-control fw-medium" placeholder="poziție" id="pozitie_input">
+                    </div>
                 </div>
             </div>
         </div>
-    </div><br>
+    </div>
+    
     <div class="row">
+        <small class="form-text text-muted d-block text-end" id="id_adresa_pozitie_small">
+            00000000-0000-0000-0000-000000000000
+        </small>
         <div class="col">
-            <input type="text" class="form-control" placeholder="judet" id="judet_input">
+            <input type="text" class="form-control" placeholder="judet" id="judet_input" readonly>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="localitate" id="localitate_input">
+            <input type="text" class="form-control" placeholder="localitate" id="localitate_input" readonly>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="zona" id="zona_input">
+            <input type="text" class="form-control" placeholder="zona" id="zona_input" readonly>
         </div>
         <div class="col">
             <input type="text" class="form-control" placeholder="strada" id="strada_input">
@@ -59,21 +82,27 @@
         <div class="col">
             <input type="text" class="form-control" placeholder="apartament" id="apartament_input">
         </div>
-    </div><br>
+    </div>
+    
+    
+
     <div class="row">
+        <small class="form-text text-muted d-block text-end" id="id_persoana_fizica_small">
+            00000000-0000-0000-0000-000000000000
+        </small>
         <div class="col">
-            <input type="text" class="form-control" placeholder="nume" id="nume_input">
+            <input type="text" class="form-control fw-medium" placeholder="nume" id="nume_input">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="initiala" id="initiala_input">
+            <input type="text" class="form-control fw-medium" placeholder="initiala" id="initiala_input">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="prenume" id="prenume_input">
+            <input type="text" class="form-control fw-medium" placeholder="prenume" id="prenume_input">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="CNP" id="cnp_input">
+            <input type="text" class="form-control fw-medium" placeholder="CNP" id="cnp_input">
         </div>
         <div class="col">
             <input type="text" class="form-control" placeholder="email" id="email_input">
@@ -87,16 +116,16 @@
     </div><br>
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="rol impozite">
+            <input type="text" class="form-control" placeholder="rol impozite" id="rol_impozite_input">
         </div>
         <div class="col">
-            <input type="date" class="form-control" placeholder="data declaratiei">
+            <input type="date" class="form-control" placeholder="data declaratiei" id="data_declaratie_input">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="nr. inregistrare">
+            <input type="text" class="form-control" placeholder="nr. inregistrare" id="nr_inregistrare_input">
         </div>
         <div class="col">
-            <input type="date" class="form-control" lang="ro-RO" placeholder="dd.mm.yyyy">
+            <input type="date" class="form-control" lang="ro-RO" placeholder="dd.mm.yyyy" id="data_inregistrare_input">
         </div>
     </div>
 

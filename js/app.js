@@ -23,6 +23,10 @@ async function loadCapitole(capitol)
         await get_cfg_exploatatii();
         let jsonPozitie = await get_pozitia();
         console.log(jsonPozitie);
+        document.getElementById("id_small").innerText = jsonPozitie.id;
+        document.getElementById("id_adresa_pozitie_small").innerText = jsonPozitie.id_adresa_pozitie;
+        document.getElementById("id_persoana_fizica_small").innerText = jsonPozitie.id_persoana_fizica;
+        
         document.getElementById("selectTipPozitie").value = jsonPozitie.cod_tip;
         document.getElementById("selectCfgLocalitate").value = jsonPozitie.cod_localitate;
         document.getElementById("selectTipExploatatie").value = jsonPozitie.cod_exploatatie;
@@ -40,10 +44,15 @@ async function loadCapitole(capitol)
         document.getElementById("apartament_input").value = jsonPozitie.apartament;
         document.getElementById("nume_input").value = jsonPozitie.nume;
         document.getElementById("initiala_input").value = jsonPozitie.initiala;
+        document.getElementById("prenume_input").value = jsonPozitie.prenume;
         document.getElementById("cnp_input").value = jsonPozitie.cnp;
         document.getElementById("email_input").value = jsonPozitie.email;
         document.getElementById("telefon_input").value = jsonPozitie.telefon;
         document.getElementById("buletin_input").value = jsonPozitie.buletin;
+        document.getElementById("rol_impozite_input").value = jsonPozitie.rol_impozite;
+        document.getElementById("data_declaratie_input").value = jsonPozitie.data_declaratie === "0000-00-00" ? "": jsonPozitie.data_declaratie;
+        document.getElementById("nr_inregistrare_input").value = jsonPozitie.nr_inregistrare;
+        document.getElementById("data_inregistrare_input").value = jsonPozitie.data_inregistrare === "0000-00-00" ? "": jsonPozitie.data_inregistrare;
     }
     if (capitol == 2) {
         const response = await fetch("pages/capitol1.html");
