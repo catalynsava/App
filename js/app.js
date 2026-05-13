@@ -21,6 +21,29 @@ async function loadCapitole(capitol)
         await get_cfg_tip_roluri();
         await get_cfg_localitati();
         await get_cfg_exploatatii();
+        let jsonPozitie = await get_pozitia();
+        console.log(jsonPozitie);
+        document.getElementById("selectTipPozitie").value = jsonPozitie.cod_tip;
+        document.getElementById("selectCfgLocalitate").value = jsonPozitie.cod_localitate;
+        document.getElementById("selectTipExploatatie").value = jsonPozitie.cod_exploatatie;
+        document.getElementById("volum_input").value = jsonPozitie.volum;
+        document.getElementById("pozitie_input").value = jsonPozitie.pozitie;
+        document.getElementById("judet_input").value = jsonPozitie.judet;
+        document.getElementById("localitate_input").value = jsonPozitie.localitate_adresa_pozitie;
+        document.getElementById("zona_input").value = jsonPozitie.zona;
+        document.getElementById("strada_input").value = jsonPozitie.strada;
+        document.getElementById("numar_input").value = jsonPozitie.numar;
+        document.getElementById("litera_input").value = jsonPozitie.litera;
+        document.getElementById("bloc_input").value = jsonPozitie.bloc;
+        document.getElementById("scara_input").value = jsonPozitie.scara;
+        document.getElementById("etaj_input").value = jsonPozitie.etaj;
+        document.getElementById("apartament_input").value = jsonPozitie.apartament;
+        document.getElementById("nume_input").value = jsonPozitie.nume;
+        document.getElementById("initiala_input").value = jsonPozitie.initiala;
+        document.getElementById("cnp_input").value = jsonPozitie.cnp;
+        document.getElementById("email_input").value = jsonPozitie.email;
+        document.getElementById("telefon_input").value = jsonPozitie.telefon;
+        document.getElementById("buletin_input").value = jsonPozitie.buletin;
     }
     if (capitol == 2) {
         const response = await fetch("pages/capitol1.html");
@@ -78,6 +101,8 @@ async function get_pozitia(){
         
         // 4. Puneți 'await' pentru a extrage textul JSON formatat ca obiect/array
         const date = await raspuns.json();
+
+        //document.getElementById("selectTipPozitie").text = date.cod_tip;
         
         // În acest punct, variabila 'date' este complet încărcată și gata de utilizat
         //console.log(date);
@@ -154,14 +179,15 @@ async function get_cfg_exploatatii() {
 
 async function initializare() {
     //let json_cfg_tip_roluri = await get_cfg_tip_roluri();
-    await get_cfg_localitati();
+    //await get_cfg_localitati();
 
-    let jsonPozitie = await get_pozitia();
-    console.log(jsonPozitie);
+    
 
     await loadRoluri();
     await loadButoane();
     await getRoluri();
+
+    
 }
 
 
