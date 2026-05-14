@@ -2,38 +2,150 @@
     <div class="panel-title">
         Capitole
     </div>
-    <div class="list-group">       
-        <a href="#" 
-            class="list-group-item list-group-item-action list-group-item-light"
-            onclick="loadCapitole(1)">registru
-        </a>
-        <a href="#" 
-            class="list-group-item list-group-item-action list-group-item-light"
-            onclick="loadCapitole(2)">capitol 1
-        </a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 2.a</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 2.b</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 3</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 4.a</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 4.a1</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 4.b1</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 4.b2</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 4.c</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 5.a</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 5.b</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 5.c</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 6</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 7</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 8</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 9</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 10.a</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 10.b</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 11</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 12</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 13</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 14</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 15.a</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">capitol 15.b</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">mentiuni</a>
+    <div class="container-fluid p-0" id="btn_grup">
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="registru" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="registru">registru</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol1" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="capitol1">capitol 1</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol2a" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="capitol2a">capitol 2.a</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol2b" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="capitol2b">capitol 2.b</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol3" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol3">capitol 3</label>
+            </div>
+        
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol4a" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol4a">capitol 4.a</label>
+		    </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol4a1" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol4a1">capitol 4.a.1</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol4b1" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol4b1">capitol 4.b1</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol4b2" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol4b2">capitol 4.b.2</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol4c" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol4c">capitol 4.c</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol5a" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol5a">capitol 5.a</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol5b" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol5b">capitol 5.b</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol5c" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol5c">capitol 5.c</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol6" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol6">capitol 6</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol7" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol7">capitol 7</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol8" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol8">capitol 8</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol9" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol9">capitol 9</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol10a" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol10a">capitol 10.a</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol10b" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol10b">capitol 10.b</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol11" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol11">capitol 11</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol12" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol12">capitol 12</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol13" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol13">capitol 13</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol14" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol14">capitol 14</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol15a" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol15a">capitol 15.a</label>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="capitol15b" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="capitol15b">capitol 15.b</label>
+            </div>
+            <div class="col-6 d-grid">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="mentiuni" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="mentiuni">mentiuni</label>
+            </div>
+        </div>
     </div>
 </div>

@@ -11,11 +11,8 @@ async function loadButoane()
     const html = await response.text();
     document.getElementById("middle_content").innerHTML = html;
 }
-
-async function loadCapitole(capitol)
-{
-    if (capitol == 1) {
-        const response = await fetch("pages/pozitie.html");
+async function loadRegistru() {
+    const response = await fetch("pages/pozitie.html");
         const html = await response.text();
         document.getElementById("right_content").innerHTML = html;
         await get_cfg_tip_roluri();
@@ -25,9 +22,27 @@ async function loadCapitole(capitol)
         console.log(jsonPozitie);
         document.getElementById("id_small").innerText = jsonPozitie.id;
         document.getElementById("id_adresa_pozitie_small").innerText = jsonPozitie.id_adresa_pozitie;
-        document.getElementById("id_persoana_fizica_small").innerText = jsonPozitie.id_persoana_fizica;
+        
         
         document.getElementById("selectTipPozitie").value = jsonPozitie.cod_tip;
+        if (jsonPozitie.cod_tip == 1 || jsonPozitie.cod_tip == 2) {
+            const res_pf = await fetch("pages/pf.html");
+            const html_pf = await res_pf.text();
+            document.getElementById("persoana_div").innerHTML = html_pf;
+            document.getElementById("id_persoana_fizica_small").innerText = jsonPozitie.id_persoana_fizica;
+            document.getElementById("nume_input").value = jsonPozitie.nume;
+            document.getElementById("initiala_input").value = jsonPozitie.initiala;
+            document.getElementById("prenume_input").value = jsonPozitie.prenume;
+            document.getElementById("cnp_input").value = jsonPozitie.cnp;
+            document.getElementById("email_input").value = jsonPozitie.email;
+            document.getElementById("telefon_input").value = jsonPozitie.telefon;
+            document.getElementById("buletin_input").value = jsonPozitie.buletin;
+        }else{
+            const res_pj = await fetch("pages/pj.html");
+            const html_pj = await res_pj.text();
+            document.getElementById("persoana_div").innerHTML = html_pj;
+        }
+
         document.getElementById("selectCfgLocalitate").value = jsonPozitie.cod_localitate;
         document.getElementById("selectTipExploatatie").value = jsonPozitie.cod_exploatatie;
         document.getElementById("volum_input").value = jsonPozitie.volum;
@@ -42,24 +57,16 @@ async function loadCapitole(capitol)
         document.getElementById("scara_input").value = jsonPozitie.scara;
         document.getElementById("etaj_input").value = jsonPozitie.etaj;
         document.getElementById("apartament_input").value = jsonPozitie.apartament;
-        document.getElementById("nume_input").value = jsonPozitie.nume;
-        document.getElementById("initiala_input").value = jsonPozitie.initiala;
-        document.getElementById("prenume_input").value = jsonPozitie.prenume;
-        document.getElementById("cnp_input").value = jsonPozitie.cnp;
-        document.getElementById("email_input").value = jsonPozitie.email;
-        document.getElementById("telefon_input").value = jsonPozitie.telefon;
-        document.getElementById("buletin_input").value = jsonPozitie.buletin;
+        
         document.getElementById("rol_impozite_input").value = jsonPozitie.rol_impozite;
         document.getElementById("data_declaratie_input").value = jsonPozitie.data_declaratie === "0000-00-00" ? "": jsonPozitie.data_declaratie;
         document.getElementById("nr_inregistrare_input").value = jsonPozitie.nr_inregistrare;
         document.getElementById("data_inregistrare_input").value = jsonPozitie.data_inregistrare === "0000-00-00" ? "": jsonPozitie.data_inregistrare;
-    }
-    if (capitol == 2) {
-        const response = await fetch("pages/capitol1.html");
-        const html = await response.text();
-        document.getElementById("right_content").innerHTML = html;
-    }
-    
+}
+async function loadCapitol1() {
+    const response = await fetch("pages/capitol1.html");
+    const html = await response.text();
+    document.getElementById("right_content").innerHTML = html;
 }
 
 async function loadDetalii()
@@ -194,6 +201,26 @@ async function initializare() {
 
     await loadRoluri();
     await loadButoane();
+    
+
+    const select = document.getElementById('btn_grup');
+    select.addEventListener('click', ({ target }) => { // handler fires on root container click
+    if (target.getAttribute('name') === 'vbtn-radio') { // check if user clicks right element
+        
+        switch (target["id"]) {
+            case "registru":
+                loadRegistru();
+                break;
+            case "capitol1":
+                loadCapitol1();
+                break;
+        
+            default:
+                break;
+        }
+    }
+    });
+    
     await getRoluri();
 
     
@@ -201,3 +228,5 @@ async function initializare() {
 
 
 initializare();
+
+
