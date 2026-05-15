@@ -73,15 +73,6 @@ async function loadCapitol1() {
     document.getElementById("right_content").innerHTML = html;
 }
 
-async function loadDetalii()
-{
-    const response = await fetch("pages/detalii.html");
-
-    const html = await response.text();
-
-    document.getElementById("right_content").innerHTML = html;
-}
-
 //opis
 async function getRoluri() {
 
@@ -218,17 +209,15 @@ async function get_cfg_forme_organizare() {
 }
 
 async function initializare() {
-    let cfg_forme_organizare_jso = await get_cfg_forme_organizare();
-    //console.log(cfg_forme_organizare_jso);
-
-    
-
+ 
     await loadRoluri();
     await loadButoane();
     
-
+   
+    
     const select = document.getElementById('btn_grup');
-    select.addEventListener('click', ({ target }) => { // handler fires on root container click
+
+    select.addEventListener('change', ({ target }) => { // handler fires on root container click
     if (target.getAttribute('name') === 'vbtn-radio') { // check if user clicks right element
         
         switch (target["id"]) {
