@@ -1,110 +1,78 @@
-
 <form>
-    <div class="row">
+    <div class="row p-0">
         <small class="form-text text-muted d-block text-end" id="id_small">
             00000000-0000-0000-0000-000000000000
         </small>
         <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">tip pozitie</span>
-                <select class="form-select" aria-label="tip pozitie" id="selectTipPozitie">
-                </select>
+            <div class="form-floating">
+                <select class="form-select" aria-label="tip pozitie" id="selectTipPozitie"></select>
+                <label for="selectTipPozitie">tip poziție</label>
             </div>
-            
         </div>
         <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">localitate</span>
-                <select class="form-select" aria-label="localitate" id="selectCfgLocalitate">
-                </select>
+            <div class="form-floating">
+                <select class="form-select" aria-label="localitate" id="selectCfgLocalitate"></select>
+                <label for="selectCfgLocalitate">localitate</label>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row p-0">
         <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">exploatație</span>
-                <select class="form-select" aria-label="tip exploatatie" id="selectTipExploatatie">
-                </select>
-            </div> 
+            <div class="form-floating">
+                <select class="form-select" aria-label="tip exploatatie" id="selectTipExploatatie"></select>
+                <label for="selectTipExploatatie">exploatație</label>
+            </div>
         </div>
         <div class="col">
-            <div class="row">
+            <div class="row p-0">
                 <div class="col">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">volum</span>
-                        <input type="text" class="form-control fw-medium" placeholder="volum" id="volum_input">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="volum_input" placeholder="volum" autocomplete="off">
+                        <label for="volum_input">volum</label>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">poziție</span>
-                        <input type="text" class="form-control fw-medium" placeholder="poziție" id="pozitie_input">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" placeholder="poziție" id="pozitie_input" autocomplete="off">
+                        <label for="volum_input">poziție</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="row">
-        <small class="form-text text-muted d-block text-end" id="id_adresa_pozitie_small">
-            00000000-0000-0000-0000-000000000000
-        </small>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="judet" id="judet_input" readonly>
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="localitate" id="localitate_input" readonly>
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="zona" id="zona_input" readonly>
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="strada" id="strada_input">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="nr" id="numar_input">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="litera" id="litera_input">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="bloc" id="bloc_input">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="scara" id="scara_input">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="etaj" id="etaj_input">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="apartament" id="apartament_input">
-        </div>
-    </div>
+    <!-- început adresa -->
+    <div class="flex-lg-fill" id="adresa_div"></div>
+    <!-- sfarșit adresa -->
     
-    <!-- dinamic persoana fizica sau juridica -->
-     <div class="flex-lg-fill" id="persoana_div">
-
-     </div>
+    <!-- persoana fizica sau juridica -->
+    <div class="flex-lg-fill" id="persoana_div"></div>
+    <!-- sfarșit persoana -->
     
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="rol impozite" id="rol_impozite_input">
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="rol impozite" id="rol_impozite_input" autocomplete="off">
+                <label for="rol_impozite_input">rol impozite</label>
+            </div>
         </div>
         <div class="col">
-            <input type="date" class="form-control" placeholder="data declaratiei" id="data_declaratie_input">
+            <div class="form-floating">
+                <input type="date" class="form-control" placeholder="data declaratiei" id="data_declaratie_input">
+                <label for="data_declaratie_input">data declarație</label>
+            </div>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="nr. inregistrare" id="nr_inregistrare_input">
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="nr. inregistrare" id="nr_inregistrare_input" autocomplete="off">
+                <label for="nr_inregistrare_input">nr. înregistrare</label>
+            </div>
         </div>
         <div class="col">
-            <input type="date" class="form-control" lang="ro-RO" placeholder="dd.mm.yyyy" id="data_inregistrare_input">
+            <div class="form-floating">
+                <input type="date" class="form-control" lang="ro-RO" placeholder="dd.mm.yyyy" id="data_inregistrare_input">
+                <label for="data_inregistrare_input">data înregistrare</label>
+            </div>
         </div>
     </div>
-
-
-
-
 </form>

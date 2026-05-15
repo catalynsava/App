@@ -4,7 +4,6 @@ async function loadRoluri()
     const html = await response.text();
     document.getElementById("right_content").innerHTML = html;
 }
-
 async function loadButoane()
 {
     const response = await fetch("pages/butoane.html");
@@ -21,7 +20,7 @@ async function loadRegistru() {
         let jsonPozitie = await get_pozitia();
         console.log(jsonPozitie);
         document.getElementById("id_small").innerText = jsonPozitie.id;
-        document.getElementById("id_adresa_pozitie_small").innerText = jsonPozitie.id_adresa_pozitie;
+        
         
         
         document.getElementById("selectTipPozitie").value = jsonPozitie.cod_tip;
@@ -37,12 +36,17 @@ async function loadRegistru() {
             document.getElementById("email_input").value = jsonPozitie.email;
             document.getElementById("telefon_input").value = jsonPozitie.telefon;
             document.getElementById("buletin_input").value = jsonPozitie.buletin;
+            document.getElementById("id_adresa_pf_adresa").innerText = jsonPozitie.id_adresa_pf;
         }else{
             const res_pj = await fetch("pages/pj.html");
             const html_pj = await res_pj.text();
             document.getElementById("persoana_div").innerHTML = html_pj;
         }
+        const res_adresa = await fetch("pages/adresa.html");
+        const html_adresa = await res_adresa.text();
+        document.getElementById("adresa_div").innerHTML = html_adresa;
 
+        document.getElementById("id_adresa_pozitie_small").innerText = jsonPozitie.id_adresa_pozitie;
         document.getElementById("selectCfgLocalitate").value = jsonPozitie.cod_localitate;
         document.getElementById("selectTipExploatatie").value = jsonPozitie.cod_exploatatie;
         document.getElementById("volum_input").value = jsonPozitie.volum;
@@ -193,9 +197,29 @@ async function get_cfg_exploatatii() {
     }
 }
 
+async function get_cfg_forme_organizare() {
+    try {
+        let html = "";
+        const raspuns = await fetch("date/cfg_forme_organizare.json");
+        if (!raspuns.ok) {
+            throw new Error(`Eroare HTTP! Status: ${raspuns.status}`);
+        }
+        const date = await raspuns.json();
+        date.forEach( (item) => {
+            html += `
+                <option value="${item.cod}">${item.descriere}</option>
+            `;
+        });
+        //document.getElementById("selectFormeOrganizare").innerHTML = html;
+        console.log(date);
+    } catch (error) {
+        console.error("A apărut o problemă la descărcare:", error);
+    }
+}
+
 async function initializare() {
-    //let json_cfg_tip_roluri = await get_cfg_tip_roluri();
-    //await get_cfg_localitati();
+    let cfg_forme_organizare_jso = await get_cfg_forme_organizare();
+    //console.log(cfg_forme_organizare_jso);
 
     
 
@@ -220,10 +244,7 @@ async function initializare() {
         }
     }
     });
-    
     await getRoluri();
-
-    
 }
 
 
