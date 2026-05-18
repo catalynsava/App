@@ -4,6 +4,7 @@ async function loadRoluri()
     const html = await response.text();
     document.getElementById("right_content").innerHTML = html;
 }
+
 async function loadButoane()
 {
     const response = await fetch("pages/butoane.html");
@@ -77,6 +78,8 @@ async function loadCapitol1() {
 async function getRoluri() {
 
     let html = "";
+    let prima = true;
+    let contor = 1;
 
     const res = await fetch("date/roluri.json");
     if (!res.ok) {
@@ -86,16 +89,33 @@ async function getRoluri() {
 
     data.forEach((o) => {
 
-        html += `
-            <button 
-                class="list-group-item list-group-item-action btn-sm">
-                ${o.titular}
-            </button>
-        `;
+        if (prima == true) {
+            html += `
+                <input type="radio" class="btn-check" name="opislist" id="rol${contor}" autocomplete="off" data-id="${o.id}" checked>
+                <label class="btn btn-outline-secondary fw-bold" for="rol${contor}">
+                    ${o.titular}
+                    <p class="mb-0 fw-light"><small class="mb-0">
+                        ${o.denumire} tip: ${o.tip} volum: ${o.volum} poziție: ${o.pozitie}
+                    </small></p>
+                </label>
+            `;
+            prima = false;
+        } else {
+            html += `
+                <input type="radio" class="btn-check" name="opislist" id="rol${contor}" autocomplete="off" data-id="${o.id}">
+                <label class="btn btn-outline-secondary fw-bold" for="rol${contor}">
+                    ${o.titular}
+                    <p class="mb-0 fw-light"><small class="mb-0">
+                        ${o.denumire} tip: ${o.tip} volum: ${o.volum} poziție: ${o.pozitie}
+                    </small></p>
+                </label>
+            `;
+        }
+
+        contor++;
     });
 
     document.getElementById("opisList").innerHTML = html;
-
     return data;
 }
 
@@ -212,11 +232,19 @@ async function initializare() {
  
     await loadRoluri();
     await loadButoane();
-    
+    await loadRegistru();
    
+
+    const opisList = document.getElementById('opisList');
+    opisList.addEventListener('change', ({ target }) => { // handler fires on root container click
+    if (target.getAttribute('name') === 'opislist') { // check if user clicks right element
+        
+        console.log(target.id + " " + target.getAttribute("data-id"));
+    }
+    });
+    
     
     const select = document.getElementById('btn_grup');
-
     select.addEventListener('change', ({ target }) => { // handler fires on root container click
     if (target.getAttribute('name') === 'vbtn-radio') { // check if user clicks right element
         
